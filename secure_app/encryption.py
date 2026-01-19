@@ -7,6 +7,7 @@ from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.hazmat.backends import default_backend
 import base64
 import os
+import bcrypt
 
 
 class EncryptionManager:
@@ -106,7 +107,6 @@ class EncryptionManager:
         Returns:
             Hashed password
         """
-        import bcrypt
         salt = bcrypt.gensalt()
         return bcrypt.hashpw(password.encode(), salt).decode()
     
@@ -122,5 +122,4 @@ class EncryptionManager:
         Returns:
             True if password matches, False otherwise
         """
-        import bcrypt
         return bcrypt.checkpw(password.encode(), hashed.encode())

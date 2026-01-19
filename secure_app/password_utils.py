@@ -2,7 +2,7 @@
 Password utilities for SecureApp
 """
 import re
-from typing import Dict, List
+from typing import Dict, List, Any
 
 
 class PasswordValidator:
@@ -11,7 +11,7 @@ class PasswordValidator:
     def __init__(self, min_length: int = 8):
         self.min_length = min_length
     
-    def validate(self, password: str) -> Dict[str, any]:
+    def validate(self, password: str) -> Dict[str, Any]:
         """
         Validate password strength
         

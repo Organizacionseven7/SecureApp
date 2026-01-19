@@ -28,7 +28,11 @@ class InputSanitizer:
     def sanitize_sql(input_text: str) -> str:
         """
         Sanitize input to help prevent SQL injection
-        Note: Always use parameterized queries, this is just an additional layer
+        
+        ⚠️ IMPORTANT: This is NOT a replacement for parameterized queries!
+        ALWAYS use parameterized queries (prepared statements) as your primary
+        defense against SQL injection. This function provides only a weak
+        additional layer of protection and can be bypassed by determined attackers.
         
         Args:
             input_text: The text to sanitize
